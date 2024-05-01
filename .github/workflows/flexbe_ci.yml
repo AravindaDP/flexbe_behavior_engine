@@ -18,7 +18,7 @@ jobs:
         #   ros: iron
         #   ci_branch: iron
         #   python: python3
-        - os: ubuntu-22.04
+        - os: ubuntu-24.04
           ros: rolling
           python: python3
           ci_branch: rolling
