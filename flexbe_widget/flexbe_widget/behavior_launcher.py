@@ -281,7 +281,7 @@ def behavior_launcher_main(node_args=None):
     if behavior != "":
         print(f"Set up behavior_launcher with '{behavior}' ...", flush=True)
         prior_clock = launcher.get_clock().now()
-        while launcher._last_onboard_heartbeat is None:
+        while not launcher._ready_event.is_set():
             # Let stuff get going before launching behavior request
             if (launcher.get_clock().now() - prior_clock).nanoseconds > 2e9:
                 print(f"Waiting for onboard behavior engine to launch '{behavior}' ...", flush=True)
